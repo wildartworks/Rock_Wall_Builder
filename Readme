@@ -1,0 +1,498 @@
+# Rock Wall Builder v9
+
+Procedural Rock Wall Generator for Blender 3.6+
+
+**Author:** Wildartworks studio
+
+---
+
+# Overview
+
+Rock Wall Builder v9 is a Blender addon designed to quickly generate procedural rock walls for:
+
+* game environments;
+* level design;
+* fantasy scenes;
+* ruins;
+* cliffs;
+* environment prototyping.
+
+The addon supports both:
+
+* procedural rock generation;
+* custom prefab rocks loaded from external `.blend` libraries.
+
+The final result is automatically merged into a single optimized mesh object, ideal for gaming workflows.
+
+---
+
+# Main Features
+
+## Procedural Wall Generation
+
+Generate complete rock walls automatically using:
+
+* spacing;
+* random depth;
+* random scale;
+* random rotation;
+* seed variations.
+
+---
+
+## Prefab Rock System
+
+Use your own custom rocks.
+
+The addon can automatically import mesh assets from external `.blend` files.
+
+Perfect for:
+
+* low poly rocks;
+* high poly rocks;
+* stylized assets;
+* realistic environment kits.
+
+---
+
+## Realtime Workflow
+
+Includes:
+
+* Generate;
+* Update;
+* Reseed;
+* Reset.
+
+This allows fast iteration directly inside the viewport.
+
+---
+
+## Single Optimized Mesh Output
+
+The generated wall is automatically:
+
+* merged into one object;
+* placed inside the `RockWall` collection.
+
+This improves:
+
+* scene organization;
+* export workflow;
+* game optimization.
+
+---
+
+# Blender Compatibility
+
+Compatible with:
+
+* Blender 3.6
+* Blender 4.x
+
+---
+
+# Installation Guide
+
+## Step 1 — Download the Addon
+
+Download:
+
+```text
+rock_wall_builder_v9.py
+```
+
+---
+
+## Step 2 — Open Blender
+
+Launch Blender 3.6 or newer.
+
+---
+
+## Step 3 — Install the Addon
+
+Go to:
+
+```text
+Edit → Preferences → Add-ons
+```
+
+Click:
+
+```text
+Install...
+```
+
+Select:
+
+```text
+rock_wall_builder_v9.py
+```
+
+Enable the checkbox:
+
+```text
+Rock Wall Builder v9
+```
+
+---
+
+# How to Open the Addon
+
+Inside Blender:
+
+```text
+3D Viewport → Sidebar (N Key)
+```
+
+Open the tab:
+
+```text
+Rock Wall Builder
+```
+
+---
+
+# Using the Addon
+
+# Generation Modes
+
+## 1. Prefab Mode
+
+This mode uses custom rocks from external `.blend` files.
+
+### Workflow
+
+1. Create a folder.
+2. Put one or more `.blend` files inside.
+3. Each `.blend` file should contain rock meshes.
+4. In the addon:
+
+```text
+Generation Mode → Prefab
+```
+
+5. Select:
+
+```text
+Prefab Folder
+```
+
+6. Click:
+
+```text
+Generate Wall
+```
+
+The addon will:
+
+* load the meshes;
+* randomly select rocks;
+* place them automatically;
+* merge everything into one object.
+
+---
+
+## 2. Procedural Mode
+
+This mode creates rocks procedurally.
+
+### Workflow
+
+Select:
+
+```text
+Generation Mode → Procedural
+```
+
+Then click:
+
+```text
+Generate Wall
+```
+
+The addon generates:
+
+* randomized rock shapes;
+* random scale;
+* random placement;
+* procedural wall layouts.
+
+---
+
+# Parameters Explained
+
+## Wall Length (m)
+
+Defines the total wall length in meters.
+
+Example:
+
+```text
+6.0 = 6 meters
+```
+
+---
+
+## Wall Height (m)
+
+Defines the wall height in meters.
+
+---
+
+## Spacing (m)
+
+Controls the distance between rocks.
+
+Lower values:
+
+* denser walls;
+* tighter rocks.
+
+Higher values:
+
+* more open structures.
+
+---
+
+## Depth Random
+
+Adds random depth variation.
+
+Useful for:
+
+* natural rock formations;
+* avoiding flat walls.
+
+---
+
+## Position Jitter
+
+Adds random horizontal and vertical offsets.
+
+Creates more organic compositions.
+
+---
+
+## Scale Min / Scale Max
+
+Controls random rock scaling.
+
+Example:
+
+```text
+0.8 → 1.25
+```
+
+This means rocks will randomly scale between:
+
+* 80%
+* 125%
+
+---
+
+## Random Rotation
+
+Enables random rock rotation.
+
+Highly recommended for natural-looking walls.
+
+---
+
+## Seed
+
+Changes the random generation pattern.
+
+Different seed values create:
+
+* completely different wall layouts.
+
+---
+
+# Buttons Explained
+
+## Generate Wall
+
+Creates a new wall.
+
+---
+
+## Update Wall
+
+Rebuilds the wall using the current parameters.
+
+Useful after changing:
+
+* spacing;
+* scale;
+* randomness;
+* dimensions.
+
+---
+
+## Reseed
+
+Automatically generates a new random seed.
+
+Creates a completely new rock arrangement.
+
+---
+
+## Reset
+
+Restores default parameters.
+
+---
+
+# Recommended Workflow
+
+## Game Environment Workflow
+
+1. Create a rock library.
+2. Store rocks inside `.blend` files.
+3. Use Prefab Mode.
+4. Generate walls.
+5. Export as FBX.
+6. Import into Unreal Engine or Unity.
+
+---
+
+# Recommended Rock Library Structure
+
+Example:
+
+```text
+RockLibrary/
+ ├── Rocks_A.blend
+ ├── Rocks_B.blend
+ ├── Rocks_C.blend
+```
+
+Inside each `.blend`:
+
+```text
+Rock_01
+Rock_02
+Rock_03
+```
+
+---
+
+# Best Practices
+
+## Use Consistent Scale
+
+All rocks should:
+
+* use similar real-world scale;
+* have centered origins;
+* use clean transforms.
+
+Before saving your rocks:
+
+```text
+Ctrl + A → Apply Scale
+```
+
+---
+
+## Use Low Poly for Games
+
+For realtime engines:
+
+* optimize topology;
+* use baked normals;
+* reduce polycount.
+
+---
+
+# Performance Tips
+
+## High Poly Libraries
+
+If using high poly rocks:
+
+* reduce spacing;
+* avoid excessive wall sizes;
+* use viewport simplification.
+
+---
+
+# Exporting to Game Engines
+
+The generated wall is merged into:
+
+```text
+RockWall
+```
+
+You can export it directly:
+
+```text
+File → Export → FBX
+```
+
+Compatible with:
+
+* Unreal Engine;
+* Unity;
+* Godot.
+
+---
+
+# Troubleshooting
+
+# Addon Does Not Appear
+
+Make sure:
+
+* Blender version is 3.6+;
+* the addon is enabled.
+
+---
+
+# Prefab Rocks Not Loading
+
+Check:
+
+* the selected folder;
+* `.blend` files exist;
+* the `.blend` files contain mesh objects.
+
+---
+
+# Empty Wall Generated
+
+Possible causes:
+
+* invalid prefab folder;
+* no mesh objects inside the `.blend` files.
+
+---
+
+# Future Planned Features
+
+Planned improvements:
+
+* curved walls;
+* cliff generator;
+* geometry nodes integration;
+* terrain snapping;
+* collision-safe placement;
+* auto LOD generation;
+* vegetation scattering.
+
+---
+
+# License
+
+MIT License
+
+---
+
+# Credits
+
+Developed by:
+
+**Wildartworks studio**
